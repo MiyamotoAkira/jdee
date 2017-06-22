@@ -32,6 +32,7 @@
 (require 'jdee-files)
 (require 'jdee-log)
 (require 'jdee-maven)
+(require 'jdee-gradle)
 
 (defconst jdee-project-file-version "1.0"
   "*The current JDEE project file version number.")
@@ -543,6 +544,10 @@ defined by the current project's project file."
 (when (or (not (boundp 'jdee-maven-disabled-p))
           (not jdee-maven-disabled-p))
   (add-hook 'jdee-mode-hook 'jdee-maven-hook))
+
+(when (or (not (boundp 'jdee-gradle-disabled-p))
+          (not jdee-gradle-disabled-p))
+  (add-hook 'jdee-mode-hook 'jdee-gradle-hook))
 
 (provide 'jdee-project-file)
 

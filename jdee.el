@@ -117,12 +117,13 @@ specify a custom function to use. The custom function must
 be an interactive function that can be called by
 `call-interactively'."
   :group 'jdee-project
-  :safe (lambda (val) (member val '(jdee-make jdee-ant-build jdee-maven-build)))
+  :safe (lambda (val) (member val '(jdee-make jdee-ant-build jdee-maven-build jdee-gradle-build)))
   :type '(radio
-	  (const :tag "Make" jdee-make)
-	  (const :tag "Ant" jdee-ant-build)
-	  (const :tag "Maven" jdee-maven-build)
-	  (function :tag "Custom function" identity)))
+          (const :tag "Make" jdee-make)
+          (const :tag "Ant" jdee-ant-build)
+          (const :tag "Maven" jdee-maven-build)
+          (const :tag "Graddle" jdee-gradle-build)
+          (function :tag "Custom function" identity)))
 
 ;;(makunbound 'jdee-debugger)
 (defcustom jdee-debugger (list "jdb")
